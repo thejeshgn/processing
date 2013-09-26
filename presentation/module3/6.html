@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Processing 101 - Introduction</title>
+<link rel="stylesheet" href="../media/style.css" /> 
+<link rel="stylesheet" href="../media/bebas/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/TitilliumText/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/main.css" /> 
+<link rel="stylesheet" href="../media/ie6.css" /> 
+</head>
+<body>
+<div id="header-wrap">
+	<div id="header-container">
+		<div id="header">
+			<h2>Processing 101 </h2><h1>OOP</h1>
+			<ul>
+				<li><a href="./5.html">&lt;&nbsp;Previous</a></li>
+				<li><a href="../index.html">&nbsp;Home&nbsp;</a></li>
+				<li><a href="./7.html">Next&nbsp;&gt;</a></li>
+			</ul>
+		</div>
+			
+	</div>
+</div>
+
+<div id="ie6-container-wrap">
+	<div id="container">
+		<div id="content" class="content">
+		<ul>
+			<li>Now that we have cars, lets race</li>
+		<li><pre><small><code>
+car thejsCar = null;
+car batmansCar = null;
+void setup(){
+  size(500,600);
+  //lets construct a new maruthi car for me
+  thejsCar = new car("Maruthi", "KA51", 10,10);
+  //in the mean time @ batmans cave	 
+  batmansCar = new car("BatMobile","1",10,200);
+}
+
+void draw(){
+   background(255);
+   //let me start driving it
+   thejsCar.drive(10);
+   //let me display the car on screen
+   thejsCar.display();
+   //batman is faster than me
+   batmansCar.drive(30);
+  //let me display batmans car on screen
+  batmansCar.display();
+}</code>
+</small></pre>
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			<div id="credits">
+				<a href="http://thejeshgn.com/"><font color="#000">Thejesh</font>&nbsp;<font color="#83BE32">GN</font></a>
+			</div>
+			<ul>
+				<li><a href="http://thejeshgn.com/teaching/processing-101/">Course</a></li>
+				<li><a href="http://code.thejeshgn.com/processing101/">Code</a></li>	
+				<li><a href="http://www.delicious.com/gnthej/processing101/">Links</a></li>	
+				<li><a href="http://thejeshgn.com/contact/">Contact</a></li>	
+
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

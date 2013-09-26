@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Processing 101 - Introduction</title>
+<link rel="stylesheet" href="../media/style.css" /> 
+<link rel="stylesheet" href="../media/bebas/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/TitilliumText/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/main.css" /> 
+<link rel="stylesheet" href="../media/ie6.css" /> 
+<SCRIPT src="../media/js/processing-1.2.1.min.js"></SCRIPT>
+<SCRIPT src="../media/js/init.js"></SCRIPT>
+<SCRIPT type="application/processing" target="processingArea">
+size(500, 375);
+smooth();
+background(255, 204, 0);
+ellipse(250, 188, 200, 200); 
+strokeWeight(5);
+arc(250, 188, 200, 200, PI/4, PI/2);
+</SCRIPT>
+
+
+</head>
+<body>
+<div id="header-wrap">
+	<div id="header-container">
+		<div id="header">
+			<h2>Processing 101 - Drawing</h2><h1>Arc&nbsp;&nbsp; and&nbsp;&nbsp; Circle</h1>
+			<ul>
+				<li><a href="./12.html">&lt;&nbsp;Previous</a></li>
+				<li><a href="../index.html">&nbsp;Home&nbsp;</a></li>
+				<li><a href="./14.html">Next&nbsp;&gt;</a></li>
+			</ul>
+		</div>
+			
+	</div>
+</div>
+
+<div id="ie6-container-wrap">
+	<div id="container">
+		<div id="content" class="content">
+			<ol>
+				<li> A circle is a special ellipse with a centre and equal height and Width called diameter. 
+				<code>ellipse(x, y, diameter, diameter)</code>
+				<li>Arc is part of a circle (or ellipse). <code>arc(centerX, centerY, width, height, startAngle, stopAngle)</code>
+			</ol>
+			<CANVAS id="processingArea" tabindex="0" style="image-rendering: optimizequality !important; " width="500" height="375" ></CANVAS>	
+			<code><pre>
+size(500, 375);
+smooth();
+background(255, 204, 0);
+ellipse(250, 188, 200, 200); 
+strokeWeight(5);
+arc(250, 188, 200, 200, PI/4, PI/2);
+</pre>
+</code>
+		</div>
+	</div>
+</div>
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			<div id="credits">
+				<a href="http://thejeshgn.com/"><font color="#000">Thejesh</font>&nbsp;<font color="#83BE32">GN</font></a>
+			</div>
+			<ul>
+				<li><a href="http://thejeshgn.com/teaching/processing-101/">Course</a></li>
+				<li><a href="http://code.thejeshgn.com/processing101/">Code</a></li>	
+				<li><a href="http://www.delicious.com/gnthej/processing101/">Links</a></li>	
+				<li><a href="http://thejeshgn.com/contact/">Contact</a></li>	
+
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

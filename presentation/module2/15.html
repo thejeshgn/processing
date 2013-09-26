@@ -1,0 +1,114 @@
+<html>
+<head>
+<title>Processing 101 - Introduction</title>
+<link rel="stylesheet" href="../media/style.css" /> 
+<link rel="stylesheet" href="../media/bebas/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/TitilliumText/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/main.css" /> 
+<link rel="stylesheet" href="../media/ie6.css" /> 
+</head>
+<body>
+<div id="header-wrap">
+	<div id="header-container">
+		<div id="header">
+			<h2>Processing 101 </h2><h1>Input-Mouse</h1>
+			<ul>
+				<li><a href="./14.html">&lt;&nbsp;Previous</a></li>
+				<li><a href="../index.html">&nbsp;Home&nbsp;</a></li>
+				<li><a href="./16.html">Next&nbsp;&gt;</a></li>
+			</ul>
+		</div>
+			
+	</div>
+</div>
+
+<div id="ie6-container-wrap">
+	<div id="container">
+		<div id="content" class="content">
+			<ul>
+			<li><code>mousePressed()</code>  is called once after every time a mouse button is pressed.</li>
+			<li><code>mouseReleased()</code>  is called every time a mouse button is released.</li>
+			<li><code>mouseClicked()</code>  is called once after a mouse button has been pressed and then released.</li>
+			<li><code>mouseMoved()</code>  is called every time the mouse moves and a mouse button is not pressed</li>
+			<li><code>mouseDragged()</code> is called once every time the mouse moves and a mouse button is pressed.</li>
+			<li><code>mouseButton</code> 	is the variable that stores which button is pressed. Its values are LEFT, RIGHT, or CENTER depending on which button is pressed.</li>
+			<li><code>mousePressed</code> is true if a mouse button is pressed and false if a button is not pressed.</li>	
+			<li><code>mouseX and mouseY</code> contains the current horizontal/verticle coordinate of the mouse.</li>
+			<li><code>pmouseX and pmouseY</code> contains the previous horizontal/verticle coordinate of the mouse</li>
+
+<code>
+<pre>
+//draw a from(20,20) to mouse point as mouse moves
+void draw()
+{
+  background(204);
+  line(20, 20,mouseX, mouseY);
+}
+
+//draw a from(20,20) to a point where mouse is pressed 
+void draw()
+{
+  background(204);
+  smooth();
+}
+
+void mousePressed() {
+  if(mouseButton == LEFT){
+    line(20, 20,mouseX, mouseY);
+    noLoop();
+  } 
+  else{
+    loop();
+  }
+}
+</pre>
+</code>
+<li>Draw points along the way mouse is dragged.</li>
+<code>
+<pre>
+boolean dragged = false;
+int x =0;
+int y =0;
+void setup(){
+  background(255);
+  smooth();
+ 
+}
+void draw(){
+if(dragged){
+   point(x,y); 
+ }
+ dragged = false;
+}
+
+void mouseDragged(){ 
+    dragged = true;
+     x = mouseX;
+     y = mouseY;
+}
+</pre>
+</code>
+<li>Try: Draw line along the way mouse is clicked.</li>
+			</ul>	
+		</div>
+	</div>
+</div>
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			<div id="credits">
+				<a href="http://thejeshgn.com/"><font color="#000">Thejesh</font>&nbsp;<font color="#83BE32">GN</font></a>
+			</div>
+			<ul>
+				<li><a href="http://thejeshgn.com/teaching/processing-101/">Course</a></li>
+				<li><a href="http://code.thejeshgn.com/processing101/">Code</a></li>	
+				<li><a href="http://www.delicious.com/gnthej/processing101/">Links</a></li>	
+				<li><a href="http://thejeshgn.com/contact/">Contact</a></li>	
+
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

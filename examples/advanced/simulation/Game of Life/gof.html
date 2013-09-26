@@ -1,0 +1,268 @@
+<html>
+<HEAD>
+ <SCRIPT src="./processing-1.1.0.min.js"></SCRIPT>
+  <SCRIPT src="./init.js"></SCRIPT>
+ <STYLE type="text/css">
+html, body {
+  background: #EEE;
+  font-family: PJSMKGS,arial,sans-serif;  font-size: 13px;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  background: #385C85;
+  color: #FFF;
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h1 a {
+  color: #FFF;
+}
+
+
+
+</STYLE>
+</HEAD><BODY>
+
+<SCRIPT type="application/processing" target="gameoflife">
+int cellsize = 15;
+int COLS, ROWS;
+//game of life board
+int[][] old_generation, new_generation, colors;
+color lonely_color=color(255, 255, 0); //yellow
+color overpopulatin_color=color(255, 0, 0); //red
+color reproduction_color=color(0, 255, 0); //green
+color liveon_color= color(0, 0, 255); //blue
+color default_cell_color= color(0, 0, 0); //black
+int frame_rate = 10;
+
+boolean pause = false;
+
+void control(c){
+  if( c == 'play'){
+	pause = false;
+	logging("play");
+   }else if(c == 'pause'){
+	pause = true;
+	logging("pause");
+   }else if(c == 'random'){
+	  logging("random");  
+	  background(0);
+	  for (int i =0;i < COLS;i++) {
+	    for (int j =0;j < ROWS;j++) {
+		      if (int(random(5)) <= 2) {
+			old_generation[i][j] = 1;
+		      } else {
+			old_generation[i][j] = 0;
+		      }
+	    }
+	  }
+	pause = false;
+    }else if(c == 'clear'){
+          pause = true;
+	  logging("clear");  
+	  background(0);
+	  fill(default_cell_color);
+	  rectMode(CORNER);
+	  rect(0,0,width, height);
+	  grid();
+	  for (int i =0;i < COLS;i++) {
+	    for (int j =0;j < ROWS;j++) {
+		old_generation[i][j] = 0;
+	    }
+	  }
+
+    }else if(c == 'speed'){
+	  logging("speed");  
+	frame_rate = frame_rate + 1;
+	frameRate(frame_rate);
+    }else if(c == 'slow'){
+	  logging("slow");  
+	frame_rate = frame_rate-1;
+	if(frame_rate == 0)
+	frame_rate = 1;	
+	frameRate(frame_rate);
+    }	
+
+}
+
+void setup()
+{
+  logging("start setup");
+  size(1100, 550);
+  smooth();
+  COLS = int(width/cellsize);
+  ROWS = int(height/cellsize);
+
+  old_generation = new int[COLS][ROWS];
+  new_generation = new int[COLS][ROWS];
+  colors = new int[COLS][ROWS];
+  colorMode(RGB,255,255,255,100);
+  background(0);
+  //call function to fill array with random values 0 or 1
+  logging("call init");  
+  initBoard();
+  frameRate(frame_rate);
+  fill(default_cell_color);
+  logging("set up complete");  
+}
+
+
+
+void draw()
+{
+   if(!pause){
+	  background(0);
+	  fill(default_cell_color);
+	  rectMode(CORNER);
+	  rect(0,0,width, height);
+	  grid();
+	  check();
+	  render();
+   }  
+}
+
+void grid() {
+  for (int a=0; a<=COLS; a++) {
+    for (int b=0; b<=ROWS; b++) {
+      stroke(15);
+      noFill();
+      rectMode(CENTER);
+      rect(a*cellsize, b*cellsize, cellsize, cellsize);      
+    }
+  }
+}
+
+void check() {
+  Random generator = new Random();
+  //loop through every spot in our 2D array and check spots neighbors
+  for (int x = 0; x < COLS;x++) {
+    for (int y = 0; y < ROWS;y++) {
+      int nb = 0;
+      //Note the use of mod ("%") below to ensure that cells on the edges have "wrap-around" neighbors
+      //above row
+    if (old_generation[(x+COLS-1) % COLS ][(y+ROWS-1) % ROWS ] == 1) { nb++; }
+    if (old_generation[ x                ][(y+ROWS-1) % ROWS ] == 1) { nb++; }
+    if (old_generation[(x+1)      % COLS ][(y+ROWS-1) % ROWS ] == 1) { nb++; }
+      //middle row
+    if (old_generation[(x+COLS-1) % COLS ][ y                ] == 1) { nb++; }
+    if (old_generation[(x+1)      % COLS ][ y                ] == 1) { nb++; }
+      //bottom row
+    if (old_generation[(x+COLS-1) % COLS ][(y+1)      % ROWS ] == 1) { nb++; }
+    if (old_generation[ x                ][(y+1)      % ROWS ] == 1) { nb++; }
+    if (old_generation[(x+1)      % COLS ][(y+1)      % ROWS ] == 1) { nb++; }
+
+  
+      
+    //RULES OF "LIFE" HERE
+    if      ((old_generation[x][y] == 1) && (nb <  2)) { new_generation[x][y] = 0; colors[x][y] = lonely_color;  }      //loneliness
+    else if ((old_generation[x][y] == 1) && (nb >  3)) { new_generation[x][y] = 0; colors[x][y] = overpopulatin_color; }      //overpopulation
+    else if ((old_generation[x][y] == 0) && (nb == 3)) { new_generation[x][y] = 1; colors[x][y] = reproduction_color; }      //reproduction
+    else { new_generation[x][y] = old_generation[x][y]; colors[x][y] = liveon_color; }  //stasis
+    }
+  } 
+  
+}
+
+void render() {
+
+  //RENDER game of life based on "new_generation" values
+  for ( int i = 0; i < COLS;i++) {
+    for ( int j = 0; j < ROWS;j++) {
+      if (new_generation[i][j] == 1) {
+       // fill(255);
+       fill(colors[i][j]);
+        noStroke();
+        ellipse(i*cellsize,j*cellsize,cellsize,cellsize);
+      }else  if (new_generation[i][j] == 0 && colors[i][j] == lonely_color ) {
+       // fill(255);
+       fill(colors[i][j]);
+        noStroke();
+        ellipse(i*cellsize,j*cellsize,cellsize,cellsize);
+      }else  if (new_generation[i][j] == 0 && colors[i][j] == overpopulatin_color) {
+       // fill(255);
+       fill(colors[i][j]);
+        noStroke();
+        ellipse(i*cellsize,j*cellsize,cellsize,cellsize);
+      }
+    }
+  }
+  //swap old and new game of life boards
+  int[][] tmp = old_generation;
+  old_generation = new_generation;
+  new_generation = tmp;
+}
+
+//init board with random "alive" squares
+void initBoard() {
+  logging("in init");  
+  background(0);
+ 	for (int i =0;i < COLS;i++) {
+	    for (int j =0;j < ROWS;j++) {
+		      if (int(random(5)) <= 2) {
+			old_generation[i][j] = 1;
+		      } else {
+			old_generation[i][j] = 0;
+		      }
+	    }
+	  }
+   logging("out of init");  
+}
+
+void mousePressed() {
+
+  if (mouseX<width && mouseX >0 && mouseY <height && mouseY > 0) {
+	  int x;
+	  int y;
+	  
+	  x = int(mouseX/cellsize);
+	  y = int(mouseY/cellsize);
+          logging("mouse clicked x="+x+"and y="+y);
+	  old_generation[x][y] = 1;
+	  colors[x][y] = liveon_color;
+	  fill(colors[x][y]);  	  
+	  ellipse(x*cellsize,y*cellsize,cellsize,cellsize);
+	  noFill();
+
+  }
+}
+
+
+
+
+
+
+void logging(msg){
+//println(msg);  
+}
+
+</SCRIPT>
+<SCRIPT type="text/javascript">  
+
+function gameControl(c) {  
+        var pjs = Processing.getInstanceById('gameoflife');  
+        pjs.control(c); 
+}  
+</SCRIPT> 
+<CENTER>
+<DIV id="content"> 
+<H1><A href="http://media.thejeshgn.com/script/processingjs/gof.html">Game of Life</A></H1>
+<CANVAS id="gameoflife" tabindex="0" style="image-rendering: optimizequality !important; " width="1200" height="600"></CANVAS>
+	<DIV id="controls">
+	    <BUTTON class="Pomax" onclick="gameControl(&#39;pause&#39;)">Pause</BUTTON>
+	    <BUTTON class="Pomax" onclick="gameControl(&#39;play&#39;)">Play</BUTTON>
+	    <BUTTON class="Pomax" onclick="gameControl(&#39;random&#39;)">Random</BUTTON>
+	    <BUTTON class="Pomax" onclick="gameControl(&#39;clear&#39;)">Clear</BUTTON>
+	    <!--<button  class="Pomax" onclick="gameControl('speed')">Speed up</button>
+	    <button  class="Pomax" onclick="gameControl('slow')">Slow Down</button> -->
+	<BR>To start with your own inititial setup. Clear it and click on the grid. You can also pause and introduce some new life. Go ahead, be a god.
+	</DIV>
+<H1>Go ahead, be a god.&nbsp;&nbsp;&nbsp;&nbsp; <A href="http://thejeshgn.com/2011/05/06/game-of-life-with-processing-js/">Read related blog post</A></H1>
+</DIV>
+</CENTER>
+
+
+</BODY></HTML>

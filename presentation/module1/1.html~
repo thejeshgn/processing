@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Processing 101 - Introduction</title>
+<link rel="stylesheet" href="../media/style.css" /> 
+<link rel="stylesheet" href="../media/bebas/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/TitilliumText/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/main.css" /> 
+<link rel="stylesheet" href="../media/ie6.css" /> 
+</head>
+<body>
+<div id="header-wrap">
+	<div id="header-container">
+		<div id="header">
+			<h2>Processing 101 - Introduction</h2><h1>Course&nbsp;&nbsp;organization</h1>
+			<ul>
+				<li><a href="./0.html">&lt;&nbsp;Previous</a></li>
+				<li><a href="../index.html">&nbsp;Home&nbsp;</a></li>
+				<li><a href="./2.html">Next&nbsp;&gt;</a></li>
+			</ul>
+		</div>
+			
+	</div>
+</div>
+
+<div id="ie6-container-wrap">
+	<div id="container">
+		<div id="content" class="content">
+			<p>This course is organized into three modules
+			 <ol><b><li> Introduction</li></b> 
+<ul>
+<li>Introduction to Processing
+<li>Installation of runtime and setup
+<li>Working with IDE</li>
+<li>Your Drawing sheet</li>
+<li>Co-ordinate system
+<li>Points and Lines
+<li>Arc, Circle and other geometrical shapes
+<li>Drawing order
+<li>Colors, Stroke Width and Fill
+<li>Lets create an Android
+</ul>
+
+<b><li>Programming with Processing</li> </b> 
+<ul>
+<li>Structure (statements and comments)
+<li>Operators
+<li>Variables (primitives)
+<li>Functions (custom and built in)
+<li>Conditional Flows
+<li>Looping
+<li>Loop inside a loop
+<li>Text and Font
+<li>Mouse Interactions
+<li>Keyboard Interactions
+<li>Save (text and image)
+</ul>
+<b><li> Advanced Processing </li> </b>
+<ul>
+<li>Object oriented programming (classes and objects)
+<li>Arrays
+<li>Motions
+<li>Images (load, interact and processing)
+<li>Simulations
+<li>Introduction to 3d
+</ul>
+</ol>
+</p>
+	
+
+
+		</div>
+	</div>
+</div>
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			<div id="credits">
+				<a href="http://thejeshgn.com/"><font color="#000">Thejesh</font>&nbsp;<font color="#83BE32">GN</font></a>
+			</div>
+			<ul>
+				<li><a href="http://thejeshgn.com/teaching/processing-101/">Course</a></li>
+				<li><a href="http://code.thejeshgn.com/processing101/">Code</a></li>	
+				<li><a href="http://www.delicious.com/gnthej/processing101/">Links</a></li>	
+				<li><a href="http://thejeshgn.com/contact/">Contact</a></li>	
+
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

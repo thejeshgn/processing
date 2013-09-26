@@ -1,0 +1,160 @@
+	font: 50% Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2 {
+	font-family:  'BebasRegular',Tahoma, Arial, Geneva, sans-serif;
+}
+
+h1 {
+	font:27px/35px 'BebasRegular',Arial,sans-serif;
+}
+
+h2 {
+	font:18px/27px 'BebasRegular',Arial,sans-serif;
+}
+
+
+p {
+	margin: 10px 0;
+	padding: 0;
+}
+
+blockquote {
+	font-style: italic;	
+}
+
+#header-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;	
+	background-color:white;
+}
+
+#header-container {
+	height: 90px;
+}
+
+#header {
+	font: 18px/27px 'BebasRegular', Arial, sans-serif;
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#header h1 {
+	text-align: left;
+	width: 295px;
+	margin: 0;
+	position: absolute;
+	left: 60px;
+	top: 25px;
+	background-color:white;
+}
+
+#header h1 em{
+	font-size: small;
+	display: block;
+}
+
+#header ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: 35px;
+	right: 0;
+}
+
+#header ul li {
+	float: left;
+	margin-right: 5px;
+}
+
+#header ul li a{
+	font-weight: bold;
+	font-size: 1.4em;
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+#header ul li a:hover {
+}
+
+#container {
+	width: 940px;
+	margin: 0 auto;
+	font-size: 1.4em;
+	overflow: auto;
+	padding: 90px 0 40px;
+}
+
+#content {
+	float: left;
+	margin: 20px auto;
+	width: 900px;
+	font: 25px/32px 'TitilliumText22LRegular', Arial, sans-serif;letter-spacing: 0;
+}
+
+#sidebar {
+	float: right;
+	width: 275px;
+	margin-top: 10px;
+}
+
+#footer-wrap {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;	
+	background-color:white;
+}
+
+#footer-container {
+	height: 40px;
+}
+
+#footer {
+	font: 18px/27px 'BebasRegular', Arial, sans-serif;
+	width: 940px;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+#footer ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	right: 0;
+}
+
+#footer ul li {
+	float: left;
+	margin-right: 5px;
+}
+
+#footer ul li a{
+	margin-right: 5px;
+	text-decoration: none;
+}
+a{
+	color:#AC0604;
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+
+#footer ul li a:hover {
+}
+
+#credits{
+float:left;
+font: 10px/14px 'BebasRegular', Arial, sans-serif;
+width: 240px;
+}
+
+

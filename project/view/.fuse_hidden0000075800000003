@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>India Bribe Visualization</title>
+<link rel="stylesheet" href="http://media.thejeshgn.com/teaching/processing101/presentation/media/bebas/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="http://media.thejeshgn.com/teaching/processing101/presentation/media/TitilliumText/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="main.css" /> 
+</head>
+<body>
+<div id="all_content" class="all_content">
+<div id="header-wrap">
+	<div id="header-container">
+		<div id="header">
+			<h1>BRIBE VISUALIZATION</h1>
+			<ul>
+				<li>STATES -</li>
+				<li><a href="depts.html">DEPARTMENTS</a>-</li>
+				<li><a href="mapping.html">MAPPING</a></li>
+			</ul>
+		</div>
+			
+	</div>
+</div>
+
+	<div id="container">
+		<div id="content" class="content">
+		<div id="sidebar" class="sidebar">
+			Map here
+		</div>
+		<div>
+			<!--begin applet -->
+
+
+<!--[if !IE]> -->
+	  <object classid="java:filetreemap_06b.class" 
+            	  type="application/x-java-applet"
+            	  archive="filetreemap_06b.jar,treemap.jar,core.jar"
+            	  width="900" height="500"
+            	  standby="Loading Processing software..." >
+            
+	    <param name="archive" value="ipab.jar,treemap.jar,core.jar" />
+	    
+	    <param name="mayscript" value="true" />
+	    <param name="scriptable" value="true" />
+	    
+	    <param name="image" value="loading.gif" />
+	    <param name="boxmessage" value="Loading Processing software..." />
+	    <param name="boxbgcolor" value="#FFFFFF" />
+	  <!--<![endif]-->
+
+	    <!-- For more instructions on deployment, 
+		 or to update the CAB file listed here, see:
+		 http://java.sun.com/javase/6/webnotes/family-clsid.html
+		 http://java.sun.com/javase/6/webnotes/install/jre/autodownload.html -->
+	    <object classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
+		    codebase="http://java.sun.com/update/1.6.0/jinstall-6u20-windows-i586.cab"
+		    width="900" height="500"
+		    standby="Loading Processing software..."  >
+	      
+	      <param name="code" value="filetreemap_06b" />
+	      <param name="archive" value="filetreemap_06b.jar,treemap.jar,core.jar" />
+	      
+	      <param name="mayscript" value="true" />
+	      <param name="scriptable" value="true" />
+	      
+	      <param name="image" value="loading.gif" />
+	      <param name="boxmessage" value="Loading Processing software..." />
+	      <param name="boxbgcolor" value="#FFFFFF" />
+	      
+	      <p>
+		<strong>
+		  This browser does not have a Java Plug-in.
+		  <br />
+		  <a href="http://www.java.com/getjava" title="Download Java Plug-in">
+		    Get the latest Java Plug-in here.
+		  </a>
+		</strong>
+	      </p>
+	      
+	    </object>
+	    
+	  <!--[if !IE]> -->
+	  </object>
+	  <!--<![endif]-->
+
+			<!--end applet -->
+		</div>
+		</div>
+	</div>
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			<div id="credits">
+				<a href="http://thejeshgn.com/"><font color="#000">Thejesh</font>&nbsp;<font color="#83BE32">GN</font></a>
+			</div>
+			<ul>
+				<li><a href="http://thejeshgn.com/teaching/processing-101/">Course</a></li>
+				<li><a href="http://code.thejeshgn.com/processing101/">Code</a></li>	
+				<li><a href="http://www.delicious.com/gnthej/processing101/">Links</a></li>	
+				<li><a href="http://thejeshgn.com/contact/">Contact</a></li>	
+
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

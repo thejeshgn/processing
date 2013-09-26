@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>Processing 101 - Introduction</title>
+<link rel="stylesheet" href="../media/style.css" /> 
+<link rel="stylesheet" href="../media/bebas/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/TitilliumText/stylesheet.css" type="text/css" charset="utf-8">
+<link rel="stylesheet" href="../media/main.css" /> 
+<link rel="stylesheet" href="../media/ie6.css" /> 
+</head>
+<body>
+<div id="header-wrap">
+	<div id="header-container">
+		<div id="header">
+			<h2>Processing 101 </h2><h1>Variable&nbsp;&nbsp;Scope</h1>
+			<ul>
+				<li><a href="./4.html">&lt;&nbsp;Previous</a></li>
+				<li><a href="../index.html">&nbsp;Home&nbsp;</a></li>
+				<li><a href="./6.html">Next&nbsp;&gt;</a></li>
+			</ul>
+		</div>
+			
+	</div>
+</div>
+
+<div id="ie6-container-wrap">
+	<div id="container">
+		<div id="content" class="content">
+			<ul>
+			<li>All variables either have a global or local "scope".</li>
+			<li>A variable inside a method can be used only inside that method. Its local scope.</li>
+			<li>Variables may be localized within classes, methods, and loop statements.</li>
+			<li>A variable declared outside the setup() or draw(), in the global section has global scope.</li>
+			<li>A local variable will override the Global variable with the same name.</li>
+			<code><pre>
+int a = 20;  // global variable "a"
+void setup() 
+{
+  size(200, 200);
+  background(51);
+  stroke(255);
+}
+void draw()
+{
+int b = 20;  // local variable "b"		
+}
+</pre></code>
+			</ul>	
+		</div>
+	</div>
+</div>
+
+<div id="footer-wrap">
+	<div id="footer-container">
+		<div id="footer">
+			<div id="credits">
+				<a href="http://thejeshgn.com/"><font color="#000">Thejesh</font>&nbsp;<font color="#83BE32">GN</font></a>
+			</div>
+			<ul>
+				<li><a href="http://thejeshgn.com/teaching/processing-101/">Course</a></li>
+				<li><a href="http://code.thejeshgn.com/processing101/">Code</a></li>	
+				<li><a href="http://www.delicious.com/gnthej/processing101/">Links</a></li>	
+				<li><a href="http://thejeshgn.com/contact/">Contact</a></li>	
+
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

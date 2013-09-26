@@ -1,0 +1,15 @@
+<tree name="BribePatterns" level="0" color="100,200,300">
+<node level="1" name="Bangalore" value="100" color="100,200,300" >
+	<node level="2" name="Police" value="10" color="100,200,300">
+	</node>
+	<node level="2" name="Revenue" value="20" color="150,240,300">
+	</node>
+</node>
+<node level="1" name="Mysore" value="20" color="140,210,300" >
+	<node level="2" name="Police" value="10" color="100,200,300">
+	</node>
+	<node level="2" name="Revenue" value="20" color="200,200,100">
+	</node>
+</node>
+
+</tree>
